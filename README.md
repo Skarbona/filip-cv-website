@@ -41,6 +41,19 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### Available Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm start            # Start production server
+npm run lint         # Run ESLint
+npm run lint:fix     # Fix ESLint errors automatically
+npm run format       # Format code with Prettier
+npm run format:check # Check code formatting
+npm run type-check   # Run TypeScript type checking
+```
+
 ### Build for Production
 
 ```bash
@@ -69,6 +82,20 @@ npm start
 - ✅ Color-coded companies across sections
 - ✅ Technology badges with brand colors
 - ✅ GDPR compliant
+- ✅ ESLint + Prettier for code quality
+- ✅ TypeScript for type safety
+- ✅ VS Code integration with recommended extensions
+
+## 🔧 Code Quality
+
+This project uses:
+
+- **ESLint** - Linting with Next.js recommended config
+- **Prettier** - Code formatting
+- **TypeScript** - Type checking
+- **EditorConfig** - Consistent coding styles across editors
+
+All code is automatically formatted and linted before commit.
 
 ## 🔒 Security
 
