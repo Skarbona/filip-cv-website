@@ -47,7 +47,7 @@ export default function Consulting() {
             {consulting.map((project) => (
               <Card
                 key={project.id}
-                className="hover:shadow-xl transition-all border-l-4 border-l-purple-500 dark:border-l-purple-400"
+                className="hover:shadow-xl transition-all border-l-4 border-l-purple-500 dark:border-l-purple-400 hover-pixel-float"
               >
                 <CardHeader>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-2">

@@ -83,7 +83,7 @@ export default function Achievements() {
               return (
                 <Card
                   key={achievement.id}
-                  className={`hover:shadow-xl transition-all hover:-translate-y-1 border-l-4 ${colors.border}`}
+                  className={`hover:shadow-xl transition-all hover:-translate-y-1 border-l-4 ${colors.border} hover-pixel-float`}
                 >
                   <CardHeader>
                     <div className="flex items-start gap-4">

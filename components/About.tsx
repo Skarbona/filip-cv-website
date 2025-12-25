@@ -25,17 +25,22 @@ export default function About() {
             About Me
           </h2>
 
-          <Card className="border-2 border-slate-200 dark:border-slate-700 shadow-xl">
+          <Card className="hover-pixel-float">
             <CardContent className="p-8 md:p-12">
               <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
-                {personalInfo.bio}
+                {personalInfo.aboutMe.split("\n").map((line, idx) => (
+                  <span key={idx}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
               </p>
             </CardContent>
           </Card>
 
           {/* Fun facts grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            <Card className="text-center p-6 hover:shadow-xl transition-shadow">
+            <Card className="text-center p-6 hover:shadow-xl transition-shadow hover-pixel-float">
               <CardContent className="pt-6">
                 <div className="pixel-font text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">
                   {personalInfo.experience}
@@ -46,7 +51,7 @@ export default function About() {
               </CardContent>
             </Card>
 
-            <Card className="text-center p-6 hover:shadow-xl transition-shadow">
+            <Card className="text-center p-6 hover:shadow-xl transition-shadow hover-pixel-float">
               <CardContent className="pt-6">
                 <div className="pixel-font text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2">
                   6+
@@ -57,7 +62,7 @@ export default function About() {
               </CardContent>
             </Card>
 
-            <Card className="text-center p-6 hover:shadow-xl transition-shadow">
+            <Card className="text-center p-6 hover:shadow-xl transition-shadow hover-pixel-float">
               <CardContent className="pt-6">
                 <div className="pixel-font text-2xl font-bold text-green-600 dark:text-green-400 mb-2">
                   20+

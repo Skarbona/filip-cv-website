@@ -73,7 +73,7 @@ export default function Skills() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Technical Skills */}
-            <Card>
+            <Card className="hover-pixel-float">
               <CardHeader className="border-b">
                 <div className="flex items-center gap-3">
                   <PixelIcon
@@ -96,7 +96,7 @@ export default function Skills() {
             </Card>
 
             {/* Soft Skills */}
-            <Card>
+            <Card className="hover-pixel-float">
               <CardHeader className="border-b">
                 <div className="flex items-center gap-3">
                   <PixelIcon
@@ -129,7 +129,7 @@ export default function Skills() {
             </Card>
 
             {/* Languages */}
-            <Card>
+            <Card className="hover-pixel-float">
               <CardHeader className="border-b">
                 <div className="flex items-center gap-3">
                   <PixelIcon
@@ -159,7 +159,7 @@ export default function Skills() {
             </Card>
 
             {/* Interests */}
-            <Card>
+            <Card className="hover-pixel-float">
               <CardHeader className="border-b">
                 <div className="flex items-center gap-3">
                   <PixelIcon
@@ -189,7 +189,7 @@ export default function Skills() {
 
           {/* Education */}
           <div className="pt-8">
-            <Card>
+            <Card className="hover-pixel-float">
               <CardHeader className="border-b">
                 <div className="flex items-center gap-3">
                   <PixelIcon

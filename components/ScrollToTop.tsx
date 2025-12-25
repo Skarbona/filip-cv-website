@@ -33,7 +33,7 @@ export default function ScrollToTop() {
         <Button
           onClick={scrollToTop}
           size="default"
-          className="fixed bottom-8 right-8 z-50 w-12 h-12 p-0 hover:scale-110 transition-transform"
+          className="fixed bottom-8 right-8 z-50 w-12 h-12 p-0 hover:scale-110 transition-transform cursor-pointer"
           aria-label="Scroll to top"
         >
           <PixelIcon name="arrow-up-solid" width={20} height={20} />

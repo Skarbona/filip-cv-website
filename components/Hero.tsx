@@ -24,9 +24,9 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Avatar/Photo */}
+          {/* Avatar/Photo with float animation */}
           <div className="mb-8 flex justify-center">
-            <div className="w-32 h-32 overflow-hidden shadow-[var(--pixel-box-shadow)] box-shadow-margin bg-white">
+            <div className="w-32 h-32 overflow-hidden shadow-[var(--pixel-box-shadow)] box-shadow-margin bg-white animate-pixel-float">
               <Image
                 src="/profile.jpg"
                 alt="Filip Sokołowski"
@@ -62,11 +62,11 @@ export default function Hero() {
             {personalInfo.bio}
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons with shake animation on hover */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               size="lg"
-              className="text-base"
+              className="text-base hover-pixel-shake"
               onClick={() => (window.location.href = `mailto:${personalInfo.email}`)}
             >
               <PixelIcon name="envelope-solid" width={20} height={20} />
@@ -75,7 +75,7 @@ export default function Hero() {
             <Button
               size="lg"
               variant="secondary"
-              className="text-base"
+              className="text-base hover-pixel-shake"
               onClick={() => (window.location.href = `tel:${personalInfo.phone}`)}
             >
               <PixelIcon name="phone-ringing-low" variant="regular" width={20} height={20} />
@@ -89,7 +89,7 @@ export default function Hero() {
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-slate-200 hover:bg-slate-600 transition-colors shadow-[var(--pixel-box-shadow)] box-shadow-margin"
+              className="p-3 bg-slate-200 hover:bg-slate-600 transition-colors shadow-[var(--pixel-box-shadow)] box-shadow-margin cursor-pointer"
             >
               <PixelIcon name="github" variant="brands" width={24} height={24} />
             </a>
@@ -97,7 +97,7 @@ export default function Hero() {
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-blue-400 hover:bg-blue-600 transition-colors shadow-[var(--pixel-box-shadow)] box-shadow-margin"
+              className="p-3 bg-blue-400 hover:bg-blue-600 transition-colors shadow-[var(--pixel-box-shadow)] box-shadow-margin cursor-pointer"
             >
               <PixelIcon name="linkedin" variant="brands" width={24} height={24} />
             </a>
@@ -105,7 +105,7 @@ export default function Hero() {
               href={personalInfo.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-pink-400 hover:bg-pink-600 transition-colors shadow-[var(--pixel-box-shadow)] box-shadow-margin"
+              className="p-3 bg-pink-400 hover:bg-pink-600 transition-colors shadow-[var(--pixel-box-shadow)] box-shadow-margin cursor-pointer"
             >
               <PixelIcon name="instagram" variant="brands" width={24} height={24} />
             </a>

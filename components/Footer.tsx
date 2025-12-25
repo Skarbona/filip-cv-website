@@ -65,7 +65,7 @@ export default function Footer() {
                   href={personalInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-slate-200 hover:bg-slate-600 transition-colors shadow-[var(--pixel-box-shadow)] box-shadow-margin"
+                  className="p-2 bg-slate-200 hover:bg-slate-600 transition-colors shadow-[var(--pixel-box-shadow)] box-shadow-margin cursor-pointer"
                 >
                   <PixelIcon name="github" variant="brands" width={20} height={20} />
                 </a>
@@ -73,7 +73,7 @@ export default function Footer() {
                   href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-blue-400 hover:bg-blue-600 transition-colors shadow-[var(--pixel-box-shadow)] box-shadow-margin"
+                  className="p-2 bg-blue-400 hover:bg-blue-600 transition-colors shadow-[var(--pixel-box-shadow)] box-shadow-margin cursor-pointer"
                 >
                   <PixelIcon name="linkedin" variant="brands" width={20} height={20} />
                 </a>
@@ -81,7 +81,7 @@ export default function Footer() {
                   href={personalInfo.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-pink-400 hover:bg-pink-600 transition-colors shadow-[var(--pixel-box-shadow)] box-shadow-margin"
+                  className="p-2 bg-pink-400 hover:bg-pink-600 transition-colors shadow-[var(--pixel-box-shadow)] box-shadow-margin cursor-pointer"
                 >
                   <PixelIcon name="instagram" variant="brands" width={20} height={20} />
                 </a>

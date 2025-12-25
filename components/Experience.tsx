@@ -81,7 +81,7 @@ export default function Experience() {
               return (
                 <Card
                   key={job.id}
-                  className={`hover:shadow-xl transition-all border-l-4 ${colors.border}`}
+                  className={`hover:shadow-xl transition-all border-l-4 ${colors.border} hover-pixel-float`}
                 >
                   <CardHeader>
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-2">

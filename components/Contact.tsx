@@ -35,7 +35,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <Card className="mb-12">
+          <Card className="mb-12 hover-pixel-float">
             <CardContent className="p-8 md:p-12">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Email */}
@@ -100,7 +100,7 @@ export default function Contact() {
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="lg"
-                className="text-base"
+                className="text-base hover-pixel-shake cursor-pointer"
                 onClick={() => window.open(personalInfo.github, "_blank")}
               >
                 <PixelIcon name="github" variant="brands" width={20} height={20} />
@@ -110,7 +110,7 @@ export default function Contact() {
 
               <Button
                 size="lg"
-                className="text-base"
+                className="text-base hover-pixel-shake cursor-pointer"
                 onClick={() => window.open(personalInfo.linkedin, "_blank")}
               >
                 <PixelIcon name="linkedin" variant="brands" width={20} height={20} />
@@ -120,7 +120,7 @@ export default function Contact() {
 
               <Button
                 size="lg"
-                className="text-base"
+                className="text-base hover-pixel-shake cursor-pointer"
                 onClick={() => window.open(personalInfo.instagram, "_blank")}
               >
                 <PixelIcon name="instagram" variant="brands" width={20} height={20} />
