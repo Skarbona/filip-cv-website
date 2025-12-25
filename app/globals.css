@@ -121,8 +121,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Pixel art cursor - default */
-    cursor: url("/cursors/cursor-default.svg") 2 2, auto;
   }
 
   /* Pixel art cursor for interactive elements */
@@ -132,9 +130,7 @@
   input[type="submit"],
   input[type="button"],
   select,
-  label[for] {
-    cursor: url("/cursors/cursor-pointer.svg") 8 2, pointer;
-  }
+
 
   /* Keep text cursor for text inputs */
   input[type="text"],
