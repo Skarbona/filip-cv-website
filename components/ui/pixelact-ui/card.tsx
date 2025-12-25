@@ -26,9 +26,7 @@ export const cardVariants = cva("", {
   },
 });
 
-export interface CardProps
-  extends React.ComponentProps<"div">,
-    VariantProps<typeof cardVariants> {
+export interface CardProps extends React.ComponentProps<"div">, VariantProps<typeof cardVariants> {
   asChild?: boolean;
 }
 
@@ -56,12 +54,7 @@ function CardHeader({ ...props }: CardProps) {
 function CardTitle({ ...props }: CardProps) {
   const { className } = props;
 
-  return (
-    <ShadcnCardTitle
-      className={cn("font-normal text-lg", className)}
-      {...props}
-    />
-  );
+  return <ShadcnCardTitle className={cn("font-normal text-lg", className)} {...props} />;
 }
 
 function CardDescription({ ...props }: CardProps) {
@@ -85,21 +78,7 @@ function CardContent({ ...props }: CardProps) {
 function CardFooter({ ...props }: CardProps) {
   const { className } = props;
 
-  return (
-    <ShadcnCardFooter
-      data-slot="card-footer"
-      className={cn(className)}
-      {...props}
-    />
-  );
+  return <ShadcnCardFooter data-slot="card-footer" className={cn(className)} {...props} />;
 }
 
-export {
-  Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
-  CardAction,
-  CardDescription,
-  CardContent,
-};
+export { Card, CardHeader, CardFooter, CardTitle, CardAction, CardDescription, CardContent };

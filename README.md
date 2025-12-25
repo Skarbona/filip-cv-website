@@ -21,17 +21,20 @@ A modern, pixel-art styled CV website built with Next.js 16 and Pixelact UI fram
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/Skarbona/filip-cv-website.git
 cd filip-cv-website
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -80,9 +83,9 @@ This is a personal portfolio project. Feel free to use it as inspiration for you
 ## 🤝 Contact
 
 **Filip Sokołowski**
+
 - Email: filip.sokolowski1990@gmail.com
 - Phone: +48 604 515 975
 - GitHub: [Skarbona](https://github.com/Skarbona)
 - LinkedIn: [filip-sokolowski-084666152](https://www.linkedin.com/in/filip-sokolowski-084666152/)
 - Instagram: [@filip.sokolowski1990](https://www.instagram.com/filip.sokolowski1990/)
-

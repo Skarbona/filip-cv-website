@@ -31,22 +31,22 @@ const pixelButtonVariants = cva(
 );
 
 export interface PixelButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof pixelButtonVariants> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof pixelButtonVariants> {
   asChild?: boolean;
 }
 
-const Button = React.forwardRef<
-  React.ComponentRef<typeof ShadcnButton>,
-  PixelButtonProps
->(({ className, variant, size, ...props }, ref) => {
-  return (
-    <ShadcnButton
-      {...props}
-      className={cn(pixelButtonVariants({ variant, size }), className)}
-      ref={ref}
-    />
-  );
-});
+const Button = React.forwardRef<React.ComponentRef<typeof ShadcnButton>, PixelButtonProps>(
+  ({ className, variant, size, ...props }, ref) => {
+    return (
+      <ShadcnButton
+        {...props}
+        className={cn(pixelButtonVariants({ variant, size }), className)}
+        ref={ref}
+      />
+    );
+  }
+);
+
+Button.displayName = "Button";
 
 export { Button };

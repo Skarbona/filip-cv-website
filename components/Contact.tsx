@@ -26,11 +26,12 @@ export default function Contact() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-          <h2 className="pixel-font text-2xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-slate-50 leading-relaxed">
-            Get In Touch
-          </h2>
+            <h2 className="pixel-font text-2xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-slate-50 leading-relaxed">
+              Get In Touch
+            </h2>
             <p className="pixel-font text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities, collaborations, or just having a chat about technology
+              I&apos;m always open to discussing new opportunities, collaborations, or just having a
+              chat about technology
             </p>
           </div>
 
@@ -46,7 +47,7 @@ export default function Contact() {
                     <h3 className="pixel-font text-l font-semibold text-slate-900 dark:text-slate-50 mb-1 leading-relaxed">
                       Email
                     </h3>
-                    <a 
+                    <a
                       href={`mailto:${personalInfo.email}`}
                       className="text-blue-600 dark:text-blue-400 hover:underline text-l"
                     >
@@ -64,7 +65,7 @@ export default function Contact() {
                     <h3 className="pixel-font text-l font-semibold text-slate-900 dark:text-slate-50 mb-1 leading-relaxed">
                       Phone
                     </h3>
-                    <a 
+                    <a
                       href={`tel:${personalInfo.phone}`}
                       className="text-green-600 dark:text-green-400 hover:underline text-l"
                     >
@@ -133,4 +134,3 @@ export default function Contact() {
     </section>
   );
 }
-

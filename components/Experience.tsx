@@ -1,7 +1,12 @@
 import { experience } from "@/lib/data";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/pixelact-ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/pixelact-ui/card";
 import { PixelIcon } from "@/components/PixelIcon";
-import Image from "next/image";
 import { TechBadge } from "@/components/TechBadge";
 
 export default function Experience() {
@@ -11,43 +16,43 @@ export default function Experience() {
         return {
           border: "border-l-orange-500 dark:border-l-orange-400",
           text: "text-orange-600 dark:text-orange-400",
-          bullet: "text-orange-500 dark:text-orange-400"
+          bullet: "text-orange-500 dark:text-orange-400",
         };
       case "Toptal":
         return {
           border: "border-l-teal-500 dark:border-l-teal-400",
           text: "text-teal-600 dark:text-teal-400",
-          bullet: "text-teal-500 dark:text-teal-400"
+          bullet: "text-teal-500 dark:text-teal-400",
         };
       case "Beeline":
         return {
           border: "border-l-green-500 dark:border-l-green-400",
           text: "text-green-600 dark:text-green-400",
-          bullet: "text-green-500 dark:text-green-400"
+          bullet: "text-green-500 dark:text-green-400",
         };
       case "UBS":
         return {
           border: "border-l-red-500 dark:border-l-red-400",
           text: "text-red-600 dark:text-red-400",
-          bullet: "text-red-500 dark:text-red-400"
+          bullet: "text-red-500 dark:text-red-400",
         };
       case "Sofomo":
         return {
           border: "border-l-indigo-500 dark:border-l-indigo-400",
           text: "text-indigo-600 dark:text-indigo-400",
-          bullet: "text-indigo-500 dark:text-indigo-400"
+          bullet: "text-indigo-500 dark:text-indigo-400",
         };
       case "Chili IT Expert Filip Sokolowski":
         return {
           border: "border-l-pink-500 dark:border-l-pink-400",
           text: "text-pink-600 dark:text-pink-400",
-          bullet: "text-pink-500 dark:text-pink-400"
+          bullet: "text-pink-500 dark:text-pink-400",
         };
       default:
         return {
           border: "border-l-blue-500 dark:border-l-blue-400",
           text: "text-blue-600 dark:text-blue-400",
-          bullet: "text-blue-500 dark:text-blue-400"
+          bullet: "text-blue-500 dark:text-blue-400",
         };
     }
   };
@@ -71,10 +76,10 @@ export default function Experience() {
           </div>
 
           <div className="flex flex-col gap-16">
-            {experience.map((job, index) => {
+            {experience.map((job) => {
               const colors = getCompanyColor(job.company);
               return (
-                <Card 
+                <Card
                   key={job.id}
                   className={`hover:shadow-xl transition-all border-l-4 ${colors.border}`}
                 >
@@ -102,7 +107,10 @@ export default function Experience() {
                   <CardContent>
                     <ul className="space-y-2 mb-6">
                       {job.description.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-slate-700 dark:text-slate-300">
+                        <li
+                          key={idx}
+                          className="flex items-start gap-3 text-slate-700 dark:text-slate-300"
+                        >
                           <span className={`${colors.bullet} mt-1.5 flex-shrink-0`}>•</span>
                           <span className="leading-relaxed">{item}</span>
                         </li>
@@ -124,4 +132,3 @@ export default function Experience() {
     </section>
   );
 }
-

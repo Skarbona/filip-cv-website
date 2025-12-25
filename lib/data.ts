@@ -8,58 +8,66 @@ export const personalInfo = {
   github: "https://github.com/Skarbona",
   linkedin: "https://www.linkedin.com/in/filip-sokolowski-084666152/",
   instagram: "https://www.instagram.com/filip.sokolowski1990/",
-  bio: "I am a programmer by profession, a freelancer by choice, a husband by love, a father by heart, and a traveler by passion. In my free time, I enjoy traveling, discovering new places, watching movies, playing games, practicing yoga, and—most importantly—running, which has become my true addiction!"
+  bio: "I am a programmer by profession, a freelancer by choice, a husband by love, a father by heart, and a traveler by passion. In my free time, I enjoy traveling, discovering new places, watching movies, playing games, practicing yoga, and—most importantly—running, which has become my true addiction!",
 };
 
 export const keyAchievements = [
   {
     id: 1,
     title: "AI Framework Development",
-    description: "Developed and implemented a scalable evaluation framework that became the project-wide standard for benchmarking AI models at Mercor, reducing the task cycle by 30%.",
-    company: "Mercor"
+    description:
+      "Developed and implemented a scalable evaluation framework that became the project-wide standard for benchmarking AI models at Mercor, reducing the task cycle by 30%.",
+    company: "Mercor",
   },
   {
     id: 2,
     title: "LLM-Generated Applications Enhancement",
-    description: "Improved quality and reliability of LLM-generated web applications through systematic evaluation and optimization strategies at Mercor.",
-    company: "Mercor"
+    description:
+      "Improved quality and reliability of LLM-generated web applications through systematic evaluation and optimization strategies at Mercor.",
+    company: "Mercor",
   },
   {
     id: 3,
     title: "Leadership in Internal Projects",
-    description: "Took a leading role in internal projects at Beeline, optimizing resource management.",
-    company: "Beeline"
+    description:
+      "Took a leading role in internal projects at Beeline, optimizing resource management.",
+    company: "Beeline",
   },
   {
     id: 4,
     title: "UX/UI Collaboration Excellence",
-    description: "Played a crucial role in collaboration with UX/UI designers, ensuring seamless integration of design and functionality across platforms.",
-    company: "Beeline"
+    description:
+      "Played a crucial role in collaboration with UX/UI designers, ensuring seamless integration of design and functionality across platforms.",
+    company: "Beeline",
   },
   {
     id: 5,
     title: "Successful Migration Leadership",
-    description: "Successfully led the migration not only to TypeScript but also to a new CSS framework, improving maintainability and scalability in AI-Driven platform.",
-    company: "UBS"
+    description:
+      "Successfully led the migration not only to TypeScript but also to a new CSS framework, improving maintainability and scalability in AI-Driven platform.",
+    company: "UBS",
   },
   {
     id: 6,
     title: "Performance Optimization",
-    description: "Optimized algorithms that reduced processing time by 90%, significantly improving system performance in AI-Driven platform.",
-    company: "UBS"
+    description:
+      "Optimized algorithms that reduced processing time by 90%, significantly improving system performance in AI-Driven platform.",
+    company: "UBS",
   },
   {
     id: 7,
     title: "Product Development Impact",
-    description: "Established a position where I had a direct impact on product development, with my insights influencing future implementations and strategic decisions.",
-    company: "Beeline"
+    description:
+      "Established a position where I had a direct impact on product development, with my insights influencing future implementations and strategic decisions.",
+    company: "Beeline",
   },
   {
     id: 8,
     title: "Stakeholder Management",
-    description: "Delivered comprehensive technical documentation and precise estimations that secured full stakeholder buy-in, effectively de-risking the project and paving the way for a smooth implementation phase.",
-    company: "Notch"
-  }
+    description:
+      "Delivered comprehensive technical documentation and precise estimations that secured full stakeholder buy-in, effectively de-risking the project and paving the way for a smooth implementation phase.",
+    company: "Notch",
+  },
 ];
 
 export const experience = [
@@ -75,9 +83,9 @@ export const experience = [
       "Led technical workshops with stakeholders to define and solidify functional and non-functional requirements",
       "Developed precise time and resource estimates for the full project implementation lifecycle, including a thorough technical risk assessment",
       "Designed and proposed scalable, high-performance enhancements to the frontend architecture to ensure the product's long-term business value",
-      "Established the foundation for the future development process, including defining coding standards and best practices for the engineering team"
+      "Established the foundation for the future development process, including defining coding standards and best practices for the engineering team",
     ],
-    technologies: ["React", "React Native", "Next.js", "Redux", "Architecture", "Leadership"]
+    technologies: ["React", "React Native", "Next.js", "Redux", "Architecture", "Leadership"],
   },
   {
     id: 2,
@@ -88,9 +96,19 @@ export const experience = [
     description: [
       "Strategic Technology Planning: Advise on technology stack selection, solution architecture. Analyze business goals to translate them into specific technical requirements",
       "Technical Oversight and Project Execution: Establishing code quality standards, best practices, and implementing CI/CD processes",
-      "Architecture and Development in an Internal Startup: Play a key role in the development of an innovative internal project, where I have a direct and decisive impact on the system's architecture"
+      "Architecture and Development in an Internal Startup: Play a key role in the development of an innovative internal project, where I have a direct and decisive impact on the system's architecture",
     ],
-    technologies: ["React", "GraphQL", "Jest", "TypeScript", "Next.js", "Zustand", "Tailwind", "AI Tools", "ChatGPT Pro"]
+    technologies: [
+      "React",
+      "GraphQL",
+      "Jest",
+      "TypeScript",
+      "Next.js",
+      "Zustand",
+      "Tailwind",
+      "AI Tools",
+      "ChatGPT Pro",
+    ],
   },
   {
     id: 3,
@@ -103,9 +121,20 @@ export const experience = [
       "Worked closely with UX/UI designers to develop user-friendly solutions that streamlined workforce management for a U.S.-based client",
       "Responsible for full-cycle development, from early-stage consultations to implementation and monitoring of feature performance",
       "Managed key elements of design system, including design tokens, ensuring consistency and scalability across projects",
-      "Worked extensively with Storybook to document, test, and streamline UI components for better developer and designer collaboration"
+      "Worked extensively with Storybook to document, test, and streamline UI components for better developer and designer collaboration",
     ],
-    technologies: ["React", "GraphQL", "REST API", "TypeScript", "Jest", "WDIO", "Storybook", "Material UI", "Design System", "Nx"]
+    technologies: [
+      "React",
+      "GraphQL",
+      "REST API",
+      "TypeScript",
+      "Jest",
+      "WDIO",
+      "Storybook",
+      "Material UI",
+      "Design System",
+      "Nx",
+    ],
   },
   {
     id: 4,
@@ -116,9 +145,18 @@ export const experience = [
     description: [
       "Led the transition from JavaScript to TypeScript and restructured the UX/UI architecture for an AI-powered data extraction platform",
       "Successfully migrated the project to a new CSS framework, improving maintainability and consistency across the application",
-      "Implemented optimized algorithms that reduced processing time by 90%, significantly enhancing performance"
+      "Implemented optimized algorithms that reduced processing time by 90%, significantly enhancing performance",
     ],
-    technologies: ["JavaScript", "React", "TypeScript", "Redux", "Ant Design", "AI", "Webpack", "Microservices"]
+    technologies: [
+      "JavaScript",
+      "React",
+      "TypeScript",
+      "Redux",
+      "Ant Design",
+      "AI",
+      "Webpack",
+      "Microservices",
+    ],
   },
   {
     id: 5,
@@ -128,9 +166,9 @@ export const experience = [
     location: "Remote",
     description: [
       "Played a key role in developing an e-commerce platform for Land Rover smartphones, optimizing performance and responsiveness",
-      "Contributed to a U.S.-based medical recruitment platform by maintaining core functionalities, improving UI accessibility"
+      "Contributed to a U.S.-based medical recruitment platform by maintaining core functionalities, improving UI accessibility",
     ],
-    technologies: ["React", "JavaScript", "Redux", "WordPress", "CSS", "Bootstrap", "Webpack"]
+    technologies: ["React", "JavaScript", "Redux", "WordPress", "CSS", "Bootstrap", "Webpack"],
   },
   {
     id: 6,
@@ -141,10 +179,21 @@ export const experience = [
     description: [
       "Developed scalable, high-performance applications and websites for a variety of clients, specializing in modern front-end technologies",
       "Built and customized CMS-based websites using WordPress, focusing on SEO and SEM optimizations",
-      "Ensured websites and applications met high standards for usability, security, and performance"
+      "Ensured websites and applications met high standards for usability, security, and performance",
     ],
-    technologies: ["WordPress", "JavaScript", "Vue", "CSS", "Node.js", "Express", "React", "MongoDB", "Firebase", "CI/CD"]
-  }
+    technologies: [
+      "WordPress",
+      "JavaScript",
+      "Vue",
+      "CSS",
+      "Node.js",
+      "Express",
+      "React",
+      "MongoDB",
+      "Firebase",
+      "CI/CD",
+    ],
+  },
 ];
 
 export const consulting = [
@@ -157,36 +206,73 @@ export const consulting = [
       "Consulting for a top-tier AI company from the US",
       "Improving LLM-generated web applications",
       "Implementing a scalable evaluation framework for benchmarking AI models",
-      "Provide consulting services in developing new innovative web technologies, focusing on selecting the right tools, designing implementation strategies"
+      "Provide consulting services in developing new innovative web technologies, focusing on selecting the right tools, designing implementation strategies",
     ],
-    technologies: ["AI", "LLM", "Web Technologies", "Consulting"]
-  }
+    technologies: ["AI", "LLM", "Web Technologies", "Consulting"],
+  },
 ];
 
 export const skills = {
   technical: [
-    "JavaScript", "TypeScript", "React", "Redux", "GraphQL", "REST API",
-    "Jest", "Testing Library", "WDIO", "Node.js", "CI/CD", "Storybook",
-    "GitHub", "GitLab", "Confluence", "Jira", "Webpack", "Figma",
-    "Vite", "Copilot", "ChatGPT Pro", "Gemini Pro", "React Router",
-    "Material UI", "Design System", "Next.js", "Tailwind CSS"
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Redux",
+    "GraphQL",
+    "REST API",
+    "Jest",
+    "Testing Library",
+    "WDIO",
+    "Node.js",
+    "CI/CD",
+    "Storybook",
+    "GitHub",
+    "GitLab",
+    "Confluence",
+    "Jira",
+    "Webpack",
+    "Figma",
+    "Vite",
+    "Copilot",
+    "ChatGPT Pro",
+    "Gemini Pro",
+    "React Router",
+    "Material UI",
+    "Design System",
+    "Next.js",
+    "Tailwind CSS",
   ],
   soft: [
-    "Problem-solving", "Attention to detail", "Responsibility",
-    "Teamwork", "Flexibility", "Perseverance",
-    "Leadership", "Mentoring", "Communication",
-    "Collaboration", "Adaptability", "Innovation",
-    "Critical thinking", "Time management", "Project management"
+    "Problem-solving",
+    "Attention to detail",
+    "Responsibility",
+    "Teamwork",
+    "Flexibility",
+    "Perseverance",
+    "Leadership",
+    "Mentoring",
+    "Communication",
+    "Collaboration",
+    "Adaptability",
+    "Innovation",
+    "Critical thinking",
+    "Time management",
+    "Project management",
   ],
   languages: [
     { language: "Polish", level: "Native" },
     { language: "English", level: "Advanced" },
-    { language: "Japanese", level: "Beginner" }
+    { language: "Japanese", level: "Beginner" },
   ],
   interests: [
-    "Family time", "Learning (Japanese!)", "Games", "Movies",
-    "Traveling", "Running", "Yoga"
-  ]
+    "Family time",
+    "Learning (Japanese!)",
+    "Games",
+    "Movies",
+    "Traveling",
+    "Running",
+    "Yoga",
+  ],
 };
 
 export const education = {
@@ -194,6 +280,5 @@ export const education = {
   field: "IT and Econometrics",
   school: "Wrocław University of Economics and Business",
   period: "2009-2016",
-  location: "Wrocław, Poland"
+  location: "Wrocław, Poland",
 };
-

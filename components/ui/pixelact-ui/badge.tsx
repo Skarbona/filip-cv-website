@@ -22,8 +22,7 @@ const badgeVariants = cva("border-none", {
 });
 
 export interface BadgeProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof badgeVariants> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof badgeVariants> {
   asChild?: boolean;
 }
 

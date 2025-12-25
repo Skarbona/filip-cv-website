@@ -1,5 +1,11 @@
 import { consulting } from "@/lib/data";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/pixelact-ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/pixelact-ui/card";
 import { TechBadge } from "@/components/TechBadge";
 import { PixelIcon } from "@/components/PixelIcon";
 import Image from "next/image";
@@ -20,13 +26,13 @@ export default function Consulting() {
           priority={false}
         />
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex justify-center mb-4">
               <div className="p-4 bg-purple-100 dark:bg-purple-900/30 shadow-[var(--pixel-box-shadow)] box-shadow-margin">
-                <PixelIcon name="lightbulb-solid" folder="solid" size={32} />
+                <PixelIcon name="lightbulb-solid" variant="solid" width={32} height={32} />
               </div>
             </div>
             <h2 className="pixel-font text-2xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-slate-50 leading-relaxed">
@@ -39,7 +45,7 @@ export default function Consulting() {
 
           <div className="space-y-6">
             {consulting.map((project) => (
-              <Card 
+              <Card
                 key={project.id}
                 className="hover:shadow-xl transition-all border-l-4 border-l-purple-500 dark:border-l-purple-400"
               >
@@ -62,8 +68,13 @@ export default function Consulting() {
                 <CardContent>
                   <ul className="space-y-2 mb-6">
                     {project.description.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-slate-700 dark:text-slate-300">
-                        <span className="text-purple-500 dark:text-purple-400 mt-1.5 flex-shrink-0">•</span>
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 text-slate-700 dark:text-slate-300"
+                      >
+                        <span className="text-purple-500 dark:text-purple-400 mt-1.5 flex-shrink-0">
+                          •
+                        </span>
                         <span className="leading-relaxed">{item}</span>
                       </li>
                     ))}
@@ -83,4 +94,3 @@ export default function Consulting() {
     </section>
   );
 }
-

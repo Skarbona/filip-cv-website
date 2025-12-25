@@ -42,7 +42,7 @@ export default function Hero() {
           <h1 className="pixel-font text-3xl md:text-5xl font-bold text-slate-900 dark:text-slate-50 mb-6 tracking-tight leading-relaxed">
             {personalInfo.name}
           </h1>
-          
+
           <h2 className="pixel-font text-lg md:text-2xl text-blue-600 dark:text-blue-400 font-semibold mb-6 leading-relaxed">
             {personalInfo.title}
           </h2>
@@ -64,19 +64,19 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="text-base"
-              onClick={() => window.location.href = `mailto:${personalInfo.email}`}
+              onClick={() => (window.location.href = `mailto:${personalInfo.email}`)}
             >
               <PixelIcon name="envelope-solid" width={20} height={20} />
               Get in Touch
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="secondary"
               className="text-base"
-              onClick={() => window.location.href = `tel:${personalInfo.phone}`}
+              onClick={() => (window.location.href = `tel:${personalInfo.phone}`)}
             >
               <PixelIcon name="phone-ringing-low" variant="regular" width={20} height={20} />
               Call Me
@@ -85,7 +85,7 @@ export default function Hero() {
 
           {/* Social Links */}
           <div className="flex justify-center gap-4">
-            <a 
+            <a
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
@@ -93,7 +93,7 @@ export default function Hero() {
             >
               <PixelIcon name="github" variant="brands" width={24} height={24} />
             </a>
-            <a 
+            <a
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
@@ -101,7 +101,7 @@ export default function Hero() {
             >
               <PixelIcon name="linkedin" variant="brands" width={24} height={24} />
             </a>
-            <a 
+            <a
               href={personalInfo.instagram}
               target="_blank"
               rel="noopener noreferrer"
@@ -123,4 +123,3 @@ export default function Hero() {
     </section>
   );
 }
-
