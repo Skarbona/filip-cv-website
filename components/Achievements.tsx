@@ -69,15 +69,15 @@ export default function Achievements() {
                 <PixelIcon name="trophy-solid" variant="solid" width={32} height={32} />
               </div>
             </div>
-            <h2 className="pixel-font text-2xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-slate-50 leading-relaxed">
+            <h2 className="pixel-font text-2xl lg:text-4xl font-bold mb-4 text-slate-900 dark:text-slate-50 leading-relaxed">
               Key Achievements
             </h2>
-            <p className="pixel-font text-xs md:text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="pixel-font text-xs lg:text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
               Highlights of my professional journey and impact on projects
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {keyAchievements.map((achievement, index) => {
               const colors = getCompanyColor(achievement.company);
               return (

@@ -4,6 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Custom breakpoint for menu and cards at 1280px */
+  --breakpoint-lg: 1280px;
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -129,8 +132,9 @@
   [role="button"],
   input[type="submit"],
   input[type="button"],
-  select,
-
+  select {
+    cursor: pointer;
+  }
 
   /* Keep text cursor for text inputs */
   input[type="text"],

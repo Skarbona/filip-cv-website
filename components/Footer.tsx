@@ -28,27 +28,27 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2 text-xs pixel-font">
                 <li>
-                  <a href="#about" className="hover:text-blue-400 transition-colors">
+                  <a href="#about" className="hover:text-blue-400 transition-colors cursor-pointer">
                     About Me
                   </a>
                 </li>
                 <li>
-                  <a href="#achievements" className="hover:text-blue-400 transition-colors">
+                  <a href="#achievements" className="hover:text-blue-400 transition-colors cursor-pointer">
                     Achievements
                   </a>
                 </li>
                 <li>
-                  <a href="#experience" className="hover:text-blue-400 transition-colors">
+                  <a href="#experience" className="hover:text-blue-400 transition-colors cursor-pointer">
                     Experience
                   </a>
                 </li>
                 <li>
-                  <a href="#skills" className="hover:text-blue-400 transition-colors">
+                  <a href="#skills" className="hover:text-blue-400 transition-colors cursor-pointer">
                     Skills
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" className="hover:text-blue-400 transition-colors">
+                  <a href="#contact" className="hover:text-blue-400 transition-colors cursor-pointer">
                     Contact
                   </a>
                 </li>

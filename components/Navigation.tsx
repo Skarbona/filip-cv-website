@@ -45,22 +45,22 @@ export default function Navigation() {
         }`}
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo/Name */}
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="pixel-font text-lg md:text-xl font-bold text-slate-900 dark:text-slate-50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors leading-relaxed"
+              className="pixel-font text-lg lg:text-xl font-bold text-slate-900 dark:text-slate-50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors leading-relaxed cursor-pointer"
             >
               {personalInfo.name.split(" ")[0]}
             </button>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="pixel-font px-4 py-2 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
+                  className="pixel-font px-4 py-2 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
                 >
                   {item.label}
                 </button>
@@ -69,7 +69,7 @@ export default function Navigation() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="lg:hidden p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -84,9 +84,9 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
+        <div className="fixed inset-0 z-40 lg:hidden">
           <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm cursor-pointer"
             onClick={() => setIsMobileMenuOpen(false)}
           />
           <div className="absolute top-16 right-0 left-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-xl">
@@ -96,7 +96,7 @@ export default function Navigation() {
                   <button
                     key={item.href}
                     onClick={() => scrollToSection(item.href)}
-                    className="pixel-font px-4 py-3 text-left text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
+                    className="pixel-font px-4 py-3 text-left text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
                   >
                     {item.label}
                   </button>
