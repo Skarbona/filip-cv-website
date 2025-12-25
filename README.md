@@ -52,6 +52,9 @@ npm run lint:fix     # Fix ESLint errors automatically
 npm run format       # Format code with Prettier
 npm run format:check # Check code formatting
 npm run type-check   # Run TypeScript type checking
+npm run test         # Run tests with Jest
+npm run test:watch   # Run tests in watch mode
+npm run test:coverage # Generate test coverage report
 ```
 
 ### Build for Production
@@ -93,9 +96,12 @@ This project uses:
 - **ESLint** - Linting with Next.js recommended config
 - **Prettier** - Code formatting
 - **TypeScript** - Type checking
+- **Jest + React Testing Library** - Component and unit testing
 - **EditorConfig** - Consistent coding styles across editors
 
-All code is automatically formatted and linted before commit.
+All code is automatically formatted and linted. Tests ensure components render correctly and function as expected.
+
+For more details on testing, see [TESTING.md](./TESTING.md).
 
 ## 🔒 Security
 

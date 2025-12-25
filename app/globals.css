@@ -121,6 +121,29 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* Pixel art cursor - default */
+    cursor: url("/cursors/cursor-default.svg") 2 2, auto;
+  }
+
+  /* Pixel art cursor for interactive elements */
+  a,
+  button,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  select,
+  label[for] {
+    cursor: url("/cursors/cursor-pointer.svg") 8 2, pointer;
+  }
+
+  /* Keep text cursor for text inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="search"],
+  input[type="url"],
+  textarea {
+    cursor: text;
   }
 }
 
