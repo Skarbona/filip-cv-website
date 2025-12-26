@@ -36,20 +36,20 @@ export default function Contact() {
           </div>
 
           <Card className="mb-12 hover-pixel-float">
-            <CardContent className="p-8 md:p-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <CardContent className="p-6 md:p-12">
+              <div className="grid grid-cols-1 gap-6">
                 {/* Email */}
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3">
                   <div className="p-3 bg-blue-100 dark:bg-blue-900/30 flex-shrink-0 shadow-[var(--pixel-box-shadow)] box-shadow-margin">
                     <PixelIcon name="envelope-solid" width={24} height={24} />
                   </div>
-                  <div>
-                    <h3 className="pixel-font text-l font-semibold text-slate-900 dark:text-slate-50 mb-1 leading-relaxed">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="pixel-font text-base md:text-lg font-semibold text-slate-900 dark:text-slate-50 mb-1 leading-relaxed">
                       Email
                     </h3>
                     <a
                       href={`mailto:${personalInfo.email}`}
-                      className="text-blue-600 dark:text-blue-400 hover:underline text-l"
+                      className="text-blue-600 dark:text-blue-400 hover:underline text-sm md:text-base break-all"
                     >
                       {personalInfo.email}
                     </a>
@@ -57,17 +57,17 @@ export default function Contact() {
                 </div>
 
                 {/* Phone */}
-                <div className="flex items-start gap-4 md:col-span-2">
+                <div className="flex items-start gap-3">
                   <div className="p-3 bg-green-100 dark:bg-green-900/30 flex-shrink-0 shadow-[var(--pixel-box-shadow)] box-shadow-margin">
                     <PixelIcon name="phone-ringing-low" variant="regular" width={24} height={24} />
                   </div>
-                  <div>
-                    <h3 className="pixel-font text-l font-semibold text-slate-900 dark:text-slate-50 mb-1 leading-relaxed">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="pixel-font text-base md:text-lg font-semibold text-slate-900 dark:text-slate-50 mb-1 leading-relaxed">
                       Phone
                     </h3>
                     <a
                       href={`tel:${personalInfo.phone}`}
-                      className="text-green-600 dark:text-green-400 hover:underline text-l"
+                      className="text-green-600 dark:text-green-400 hover:underline text-sm md:text-base"
                     >
                       {personalInfo.phone}
                     </a>
@@ -75,15 +75,15 @@ export default function Contact() {
                 </div>
 
                 {/* Location */}
-                <div className="flex items-start gap-4 md:col-span-2">
+                <div className="flex items-start gap-3">
                   <div className="p-3 bg-purple-100 dark:bg-purple-900/30 flex-shrink-0 shadow-[var(--pixel-box-shadow)] box-shadow-margin">
                     <PixelIcon name="location-pin-solid" width={24} height={24} />
                   </div>
-                  <div>
-                    <h3 className="pixel-font text-l font-semibold text-slate-900 dark:text-slate-50 mb-1 leading-relaxed">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="pixel-font text-base md:text-lg font-semibold text-slate-900 dark:text-slate-50 mb-1 leading-relaxed">
                       Location
                     </h3>
-                    <p className="pixel-font text-slate-600 dark:text-slate-400 text-l">
+                    <p className="pixel-font text-slate-600 dark:text-slate-400 text-sm md:text-base">
                       {personalInfo.location} • B2B Remote Contract
                     </p>
                   </div>

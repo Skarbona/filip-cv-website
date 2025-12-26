@@ -92,20 +92,20 @@ export default function Achievements() {
                       >
                         {index + 1}
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <CardTitle className="text-xl text-slate-900 dark:text-slate-50">
-                            {achievement.title}
-                          </CardTitle>
-                          {achievement.company && (
+                      <div className="flex-1 min-w-0">
+                        <CardTitle className="text-base lg:text-xl text-slate-900 dark:text-slate-50 leading-tight mb-2">
+                          {achievement.title}
+                        </CardTitle>
+                        {achievement.company && (
+                          <div className="mb-2">
                             <span
-                              className={`text-xs font-bold pixel-font ${colors.badgeText} ml-2`}
+                              className={`inline-block text-xs font-bold pixel-font ${colors.badgeText}`}
                             >
                               {achievement.company}
                             </span>
-                          )}
-                        </div>
-                        <CardDescription className="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                          </div>
+                        )}
+                        <CardDescription className="text-sm lg:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                           {achievement.description}
                         </CardDescription>
                       </div>
