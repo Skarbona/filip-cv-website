@@ -63,7 +63,7 @@ export default function Hero() {
           </p>
 
           {/* CTA Buttons with shake animation on hover */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-wrap justify-center gap-4 justify-center align-middle mb-12">
             <Button
               size="lg"
               className="text-base hover-pixel-shake"
