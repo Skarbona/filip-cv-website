@@ -18,12 +18,13 @@ describe("About", () => {
 
   it("should render personal bio", () => {
     render(<About />);
-    expect(screen.getByText(/programmer by profession/i)).toBeInTheDocument();
+    expect(screen.getByText(/Engineering Manager/i)).toBeInTheDocument();
+    expect(screen.getByText(/product-minded/i)).toBeInTheDocument();
   });
 
   it("should render experience card", () => {
     render(<About />);
-    expect(screen.getByText("13 years")).toBeInTheDocument();
+    expect(screen.getByText("14 years")).toBeInTheDocument();
     expect(screen.getByText("Professional Experience")).toBeInTheDocument();
   });
 

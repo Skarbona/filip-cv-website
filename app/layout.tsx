@@ -19,11 +19,13 @@ const pressStart = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: "Filip Sokołowski - Senior Software Engineer",
+  title: "Filip Sokołowski - Technical Project Manager",
   description:
-    "Passionate Senior Software Engineer with 13 years of experience specializing in front-end development. Portfolio and CV.",
+    "Engineering Manager and Front-End Team Lead with 14 years of experience specializing in front-end development. Portfolio and CV.",
   keywords: [
     "Filip Sokołowski",
+    "Technical Project Manager",
+    "Engineering Manager",
     "Software Engineer",
     "Frontend Developer",
     "React",
@@ -32,8 +34,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Filip Sokołowski", url: "https://github.com/Skarbona" }],
   openGraph: {
-    title: "Filip Sokołowski - Senior Software Engineer",
-    description: "13 years of experience in front-end development",
+    title: "Filip Sokołowski - Technical Project Manager",
+    description: "Engineering Manager and Front-End Team Lead with 14 years of experience",
     type: "website",
   },
   icons: {

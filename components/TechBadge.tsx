@@ -91,6 +91,24 @@ const techColorClasses: Record<string, string> = {
     "bg-cyan-100 text-cyan-800 border-cyan-200 dark:bg-cyan-900/30 dark:text-cyan-300 dark:border-cyan-800",
   Express:
     "bg-slate-100 text-slate-900 border-slate-200 dark:bg-slate-800/30 dark:text-slate-300 dark:border-slate-700",
+  Slack:
+    "bg-purple-100 text-purple-800 border-purple-200 dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-800",
+  Linear:
+    "bg-indigo-100 text-indigo-800 border-indigo-200 dark:bg-indigo-900/30 dark:text-indigo-300 dark:border-indigo-800",
+  ESLint:
+    "bg-purple-100 text-purple-800 border-purple-200 dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-800",
+  Biome:
+    "bg-lime-100 text-lime-800 border-lime-200 dark:bg-lime-900/30 dark:text-lime-300 dark:border-lime-800",
+  "Styled Components":
+    "bg-pink-100 text-pink-800 border-pink-200 dark:bg-pink-900/30 dark:text-pink-300 dark:border-pink-800",
+  "GitHub Actions":
+    "bg-slate-100 text-slate-900 border-slate-200 dark:bg-slate-800/30 dark:text-slate-300 dark:border-slate-700",
+  "Multi-repo":
+    "bg-slate-100 text-slate-900 border-slate-200 dark:bg-slate-800/30 dark:text-slate-300 dark:border-slate-700",
+  Cursor:
+    "bg-slate-100 text-slate-900 border-slate-200 dark:bg-slate-800/30 dark:text-slate-300 dark:border-slate-700",
+  Claude:
+    "bg-orange-100 text-orange-800 border-orange-200 dark:bg-orange-900/30 dark:text-orange-300 dark:border-orange-800",
 };
 
 export function TechBadge({ tech, className }: TechBadgeProps) {

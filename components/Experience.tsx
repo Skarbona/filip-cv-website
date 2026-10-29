@@ -12,6 +12,12 @@ import { TechBadge } from "@/components/TechBadge";
 export default function Experience() {
   const getCompanyColor = (company: string) => {
     switch (company) {
+      case "Mercor":
+        return {
+          border: "border-l-purple-500 dark:border-l-purple-400",
+          text: "text-purple-600 dark:text-purple-400",
+          bullet: "text-purple-500 dark:text-purple-400",
+        };
       case "Notch":
         return {
           border: "border-l-orange-500 dark:border-l-orange-400",

@@ -18,6 +18,8 @@ describe("Achievements", () => {
 
   it("should render all 8 achievements", () => {
     render(<Achievements />);
+    expect(screen.getByText("Engineering at Scale")).toBeInTheDocument();
+    expect(screen.getByText("AI-Assisted Delivery")).toBeInTheDocument();
     expect(screen.getByText("AI Framework Development")).toBeInTheDocument();
     expect(screen.getByText("LLM-Generated Applications Enhancement")).toBeInTheDocument();
     expect(screen.getByText("Leadership in Internal Projects")).toBeInTheDocument();
@@ -46,5 +48,6 @@ describe("Achievements", () => {
     render(<Achievements />);
     expect(screen.getByText("1")).toBeInTheDocument();
     expect(screen.getByText("8")).toBeInTheDocument();
+    expect(screen.getByText("10")).toBeInTheDocument();
   });
 });

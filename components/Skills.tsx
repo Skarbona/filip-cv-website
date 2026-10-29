@@ -38,6 +38,27 @@ const softSkillColors: Record<string, string> = {
     "bg-rose-100 text-rose-800 border-rose-200 dark:bg-rose-900/30 dark:text-rose-300 dark:border-rose-800",
 };
 
+const leadershipColors: Record<string, string> = {
+  "Cross-functional Team Leadership":
+    "bg-red-100 text-red-800 border-red-200 dark:bg-red-900/30 dark:text-red-300 dark:border-red-800",
+  "Engineering Operations":
+    "bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-800",
+  "Process Optimization":
+    "bg-teal-100 text-teal-800 border-teal-200 dark:bg-teal-900/30 dark:text-teal-300 dark:border-teal-800",
+  "QA & Audit Workflows":
+    "bg-indigo-100 text-indigo-800 border-indigo-200 dark:bg-indigo-900/30 dark:text-indigo-300 dark:border-indigo-800",
+  "Mentoring & Coaching":
+    "bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/30 dark:text-amber-300 dark:border-amber-800",
+  "Stakeholder Management":
+    "bg-orange-100 text-orange-800 border-orange-200 dark:bg-orange-900/30 dark:text-orange-300 dark:border-orange-800",
+  "Workflow Automation":
+    "bg-cyan-100 text-cyan-800 border-cyan-200 dark:bg-cyan-900/30 dark:text-cyan-300 dark:border-cyan-800",
+  "Agile/Scrum Delivery":
+    "bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-800",
+  "Resource Allocation":
+    "bg-violet-100 text-violet-800 border-violet-200 dark:bg-violet-900/30 dark:text-violet-300 dark:border-violet-800",
+};
+
 export default function Skills() {
   return (
     <section className="py-20 bg-slate-50 dark:bg-slate-950 relative overflow-hidden">
@@ -72,6 +93,39 @@ export default function Skills() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Leadership */}
+            <Card className="hover-pixel-float lg:col-span-2">
+              <CardHeader className="border-b">
+                <div className="flex items-center gap-3">
+                  <PixelIcon
+                    name="user-solid"
+                    variant="solid"
+                    width={24}
+                    height={24}
+                    className="text-red-600 dark:text-red-400"
+                  />
+                  <CardTitle className="text-2xl">Leadership & Management</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="flex flex-wrap gap-2">
+                  {skills.leadership.map((skill, idx) => {
+                    const colorClass =
+                      leadershipColors[skill] ||
+                      "bg-red-100 text-red-800 border-red-200 dark:bg-red-900/30 dark:text-red-300 dark:border-red-800";
+                    return (
+                      <span
+                        key={idx}
+                        className={`inline-flex items-center rounded-none shadow-[var(--pixel-box-shadow)] box-shadow-margin border-2 font-medium text-sm px-3 py-1.5 ${colorClass}`}
+                      >
+                        {skill}
+                      </span>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Technical Skills */}
             <Card className="hover-pixel-float">
               <CardHeader className="border-b">

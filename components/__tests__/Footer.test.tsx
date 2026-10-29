@@ -21,7 +21,7 @@ describe("Footer", () => {
 
   it("should render tagline", () => {
     render(<Footer />);
-    expect(screen.getByText("Senior Software Engineer")).toBeInTheDocument();
+    expect(screen.getByText(/Technical Project Manager/i)).toBeInTheDocument();
   });
 
   it("should render Quick Links section", () => {

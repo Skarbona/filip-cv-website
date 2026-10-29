@@ -18,6 +18,7 @@ describe("Experience", () => {
 
   it("should render all companies", () => {
     render(<Experience />);
+    expect(screen.getByText("Mercor")).toBeInTheDocument();
     expect(screen.getByText("Notch")).toBeInTheDocument();
     expect(screen.getByText("Toptal")).toBeInTheDocument();
     expect(screen.getByText("Beeline")).toBeInTheDocument();
@@ -28,13 +29,15 @@ describe("Experience", () => {
 
   it("should render job positions", () => {
     render(<Experience />);
+    expect(screen.getByText("Technical Project Manager / Engineering Manager")).toBeInTheDocument();
     expect(screen.getByText("Frontend Lead")).toBeInTheDocument();
-    expect(screen.getByText("Senior Software Engineer")).toBeInTheDocument();
+    expect(screen.getAllByText("Senior Software Engineer").length).toBeGreaterThan(0);
   });
 
   it("should render job periods", () => {
     render(<Experience />);
-    expect(screen.getByText("September 2025 - Present")).toBeInTheDocument();
+    expect(screen.getByText("December 2025 - Present")).toBeInTheDocument();
+    expect(screen.getByText("September 2025 - January 2026")).toBeInTheDocument();
     expect(screen.getByText("May 2025 - September 2025")).toBeInTheDocument();
   });
 

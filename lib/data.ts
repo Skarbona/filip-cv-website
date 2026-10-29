@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Filip Sokołowski",
-  title: "Lead Software Engineer",
+  title: "Technical Project Manager / SWE",
   location: "Wrocław, Poland",
   experience: "14 years",
   email: "filip.sokolowski1990@gmail.com",
@@ -8,12 +8,26 @@ export const personalInfo = {
   github: "https://github.com/Skarbona",
   linkedin: "https://www.linkedin.com/in/filip-sokolowski-084666152/",
   instagram: "https://www.instagram.com/filip.sokolowski1990/",
-  bio: "I am a programmer by profession, a freelancer by choice, a husband by love, a father by heart, and a traveler by passion",
+  bio: "Engineering Manager and Front-End Team Lead specializing in front-end development. I am a programmer by profession, a freelancer by choice, a husband by love, a father by heart, and a traveler by passion.",
   aboutMe:
-    "I’m a product-minded developer who values both high standards and human balance. I work best where clarity, systems thinking, and calm execution matter — especially in complex, fast-moving environments.\n\nFor the past years, I’ve been combining deep professional focus with an intentionally lived life. During the week, I thrive in demanding projects, long hours, and challenging decisions. On weekends, I slow down. While living and traveling in Japan, those moments of calm often came through walking parts of the Henro pilgrimage — the 88-temple route on Shikoku. That deeply spiritual practice helped me reset, regain perspective, and return to work grounded and focused.\n\nThis balance shapes how I work with people and products. I bring reliability under pressure, thoughtful communication, and a long-term mindset. I care about systems that scale, decisions that make sense over time, and teams that feel safe to do great work.\n\nProfessionally, I’m driven, disciplined, and accountable. Personally, I’m curious, reflective, and respectful of different cultures and ways of thinking. I believe the best results come from combining strong execution with empathy and inner stability.\n\nIf you’re looking for someone who delivers, adapts quickly, and stays calm when things get complex — while still being genuinely human — we’ll work well together.",
+    "Passionate Engineering Manager and Front-End Team Lead specializing in front-end development. I actively leverage AI tools such as Cursor, Claude, Whisper, Krisp, and Gemini Pro in my daily workflow to accelerate development, improve code quality, and optimize problem-solving. I thrive in dynamic environments, enjoy tackling new challenges, and continuously expand my skill set. I believe in long-term collaboration and the creation of meaningful digital experiences.\n\nI’m a product-minded developer who values both high standards and human balance. I work best where clarity, systems thinking, and calm execution matter — especially in complex, fast-moving environments.\n\nFor the past years, I’ve been combining deep professional focus with an intentionally lived life. During the week, I thrive in demanding projects, long hours, and challenging decisions. On weekends, I slow down. While living and traveling in Japan, those moments of calm often came through walking parts of the Henro pilgrimage — the 88-temple route on Shikoku. That deeply spiritual practice helped me reset, regain perspective, and return to work grounded and focused.\n\nThis balance shapes how I work with people and products. I bring reliability under pressure, thoughtful communication, and a long-term mindset. I care about systems that scale, decisions that make sense over time, and teams that feel safe to do great work.\n\nProfessionally, I’m driven, disciplined, and accountable. Personally, I’m curious, reflective, and respectful of different cultures and ways of thinking. I believe the best results come from combining strong execution with empathy and inner stability.\n\nIf you’re looking for someone who delivers, adapts quickly, and stays calm when things get complex — while still being genuinely human — we’ll work well together.\n\nBeyond engineering, I am a proud father and husband, an avid campervan traveler exploring Europe, a half-marathon runner, and a Japanese language enthusiast.",
 };
 
 export const keyAchievements = [
+  {
+    id: 9,
+    title: "Engineering at Scale",
+    description:
+      "Directed cross-functional development operations for a distributed network of up to several hundred engineers, providing leadership, task seeding, and technical support across AI Labs.",
+    company: "Mercor",
+  },
+  {
+    id: 10,
+    title: "AI-Assisted Delivery",
+    description:
+      "Embedded AI-assisted coding tools into the CI/CD pipeline and deployed Slack automations integrated with Linear, removing process bottlenecks and shortening time-to-market.",
+    company: "Mercor",
+  },
   {
     id: 1,
     title: "AI Framework Development",
@@ -74,10 +88,29 @@ export const keyAchievements = [
 
 export const experience = [
   {
+    id: 7,
+    company: "Mercor",
+    position: "Technical Project Manager / Engineering Manager",
+    period: "December 2025 - Present",
+    location: "Remote",
+    description: [
+      "Directed cross-functional development teams within AI Labs to design and deploy scalable automation architectures, significantly reducing manual overhead",
+      "Drove end-to-end project lifecycle management, bridging technical execution and high-level strategic goals during multi-phase AI initiatives",
+      "Fostered a high-performance engineering culture by mentoring team members, removing technical blockers, and aligning daily workflows with broader business objectives",
+      "Designed and enforced quality assurance protocols, leading continuous code audits that improved underperforming modules and maintained high evaluation standards",
+      "Shifted the team's focus toward data-driven quality metrics, so deliverables that missed performance benchmarks were rapidly refactored and resolved",
+      "Modernized the team's tech stack by embedding AI-assisted coding tools into the CI/CD pipeline, improving developer velocity and reducing time-to-market",
+      "Architected and deployed custom Slack automations integrated with Linear for issue tracking, streamlining information flow and removing process bottlenecks",
+      "Established and managed dynamic reviewer pools for code audits, defining QA protocols that kept evaluation standards high",
+      "Directed cross-functional development operations and scaled engineering workflows for a distributed network of up to several hundred engineers",
+    ],
+    technologies: ["AI", "CI/CD", "Slack", "Linear", "Leadership"],
+  },
+  {
     id: 1,
     company: "Notch",
     position: "Frontend Lead",
-    period: "September 2025 - Present",
+    period: "September 2025 - January 2026",
     location: "Remote",
     description: [
       "Spearheaded the discovery phase for a strategic client from Saudi Arabia",
@@ -85,7 +118,7 @@ export const experience = [
       "Led technical workshops with stakeholders to define and solidify functional and non-functional requirements",
       "Developed precise time and resource estimates for the full project implementation lifecycle, including a thorough technical risk assessment",
       "Designed and proposed scalable, high-performance enhancements to the frontend architecture to ensure the product's long-term business value",
-      "Established the foundation for the future development process, including defining coding standards and best practices for the engineering team",
+      "Established the foundation for future development by defining coding standards and best practices for the engineering team",
     ],
     technologies: ["React", "React Native", "Next.js", "Redux", "Architecture", "Leadership"],
   },
@@ -96,9 +129,9 @@ export const experience = [
     period: "May 2025 - September 2025",
     location: "Remote",
     description: [
-      "Strategic Technology Planning: Advise on technology stack selection, solution architecture. Analyze business goals to translate them into specific technical requirements",
-      "Technical Oversight and Project Execution: Establishing code quality standards, best practices, and implementing CI/CD processes",
-      "Architecture and Development in an Internal Startup: Play a key role in the development of an innovative internal project, where I have a direct and decisive impact on the system's architecture",
+      "Strategic Technology Planning: Advise on technology stack selection and solution architecture. Analyze business goals and translate them into technical requirements so the product stays scalable, secure, and aligned with market needs",
+      "Technical Oversight and Project Execution: Establish code quality standards, best practices, and CI/CD processes so implementation stays on plan and the delivered application is reliable and efficient",
+      "Architecture and Development in an Internal Startup: Play a key role in an innovative internal project operating on startup principles, with a direct impact on the system's architecture",
     ],
     technologies: [
       "React",
@@ -108,8 +141,12 @@ export const experience = [
       "Next.js",
       "Zustand",
       "Tailwind",
+      "ESLint",
+      "JavaScript",
       "AI Tools",
+      "Copilot",
       "ChatGPT Pro",
+      "Gemini Pro",
     ],
   },
   {
@@ -122,6 +159,7 @@ export const experience = [
       "Spearheaded multiple internal initiatives to improve business operations and user experience within the company's Vendor Management System (VMS)",
       "Worked closely with UX/UI designers to develop user-friendly solutions that streamlined workforce management for a U.S.-based client",
       "Responsible for full-cycle development, from early-stage consultations to implementation and monitoring of feature performance",
+      "Acted independently to drive key product decisions, continuously improving workflows and user experience in a fast-paced, evolving environment",
       "Managed key elements of design system, including design tokens, ensuring consistency and scalability across projects",
       "Worked extensively with Storybook to document, test, and streamline UI components for better developer and designer collaboration",
     ],
@@ -132,10 +170,16 @@ export const experience = [
       "TypeScript",
       "Jest",
       "WDIO",
+      "Testing Library",
       "Storybook",
       "Material UI",
+      "Styled Components",
       "Design System",
       "Nx",
+      "Biome",
+      "ESLint",
+      "Webpack",
+      "CI/CD",
     ],
   },
   {
@@ -167,7 +211,7 @@ export const experience = [
     period: "April 2018 - April 2019",
     location: "Remote",
     description: [
-      "Played a key role in developing an e-commerce platform for Land Rover smartphones, optimizing performance and responsiveness",
+      "Played a key role in developing an e-commerce platform for Land Rover smartphones, optimizing performance and responsiveness to drive user engagement",
       "Contributed to a U.S.-based medical recruitment platform by maintaining core functionalities, improving UI accessibility",
     ],
     technologies: ["React", "JavaScript", "Redux", "WordPress", "CSS", "Bootstrap", "Webpack"],
@@ -180,7 +224,7 @@ export const experience = [
     location: "Remote",
     description: [
       "Developed scalable, high-performance applications and websites for a variety of clients, specializing in modern front-end technologies",
-      "Built and customized CMS-based websites using WordPress, focusing on SEO and SEM optimizations",
+      "Built and customized CMS-based websites using WordPress, focusing on SEO and SEM optimizations to improve online visibility",
       "Ensured websites and applications met high standards for usability, security, and performance",
     ],
     technologies: [
@@ -193,6 +237,8 @@ export const experience = [
       "React",
       "MongoDB",
       "Firebase",
+      "Multi-repo",
+      "GitHub Actions",
       "CI/CD",
     ],
   },
@@ -203,7 +249,7 @@ export const consulting = [
     id: 1,
     company: "Mercor",
     position: "AI Model Evaluator - LLM evaluation",
-    period: "2025 - Present",
+    period: "2025",
     description: [
       "Consulting for a top-tier AI company from the US",
       "Improving LLM-generated web applications",
@@ -243,6 +289,25 @@ export const skills = {
     "Design System",
     "Next.js",
     "Tailwind CSS",
+    "ESLint",
+    "Biome",
+    "Styled Components",
+    "GitHub Actions",
+    "Cursor",
+    "Claude",
+    "Linear",
+    "Slack",
+  ],
+  leadership: [
+    "Cross-functional Team Leadership",
+    "Engineering Operations",
+    "Process Optimization",
+    "QA & Audit Workflows",
+    "Mentoring & Coaching",
+    "Stakeholder Management",
+    "Workflow Automation",
+    "Agile/Scrum Delivery",
+    "Resource Allocation",
   ],
   soft: [
     "Problem-solving",
@@ -273,6 +338,8 @@ export const skills = {
     "Movies",
     "Traveling",
     "Running",
+    "Half-marathons",
+    "Campervan travel",
     "Yoga",
   ],
 };
