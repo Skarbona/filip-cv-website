@@ -8,12 +8,15 @@ import Consulting from "@/components/Consulting";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ChatWidget from "@/components/chat/ChatWidget";
+import { CHAT_ENABLED } from "@/lib/chat/config";
 
 export default function Home() {
   return (
     <>
       <Navigation />
       <ScrollToTop />
+      {CHAT_ENABLED && <ChatWidget />}
       <main className="min-h-screen">
         <Hero />
         <section id="about">
