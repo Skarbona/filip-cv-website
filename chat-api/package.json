@@ -1,0 +1,6 @@
+{
+  "name": "filip-chat-api",
+  "private": true,
+  "type": "module",
+  "description": "Chat API for filip-sokolowski.pl. Runs TypeScript directly with Node type stripping, no build step."
+}

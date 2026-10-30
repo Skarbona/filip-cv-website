@@ -43,3 +43,8 @@ next-env.d.ts
 # deployment
 release.yml
 deploy.sh
+
+# private answers behind the chat's knowledge base (this repo is public)
+docs/chat/pytania-o-mnie.md
+# working notes that name the server's user and paths
+docs/chat/decyzje.md
