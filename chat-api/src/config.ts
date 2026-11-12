@@ -26,6 +26,10 @@ export interface Config {
   /** Take the visitor's IP from nginx's X-Real-IP header. Only behind the proxy. */
   trustProxy: boolean;
   knowledgeFile: string;
+  /** Where visitors' questions are saved, one file per day. Unset: nothing is saved. */
+  questionsDir: string | undefined;
+  /** How long the question files are kept. The chat tells visitors 30 days. */
+  questionsDays: number;
   limits: Limits;
 }
 
@@ -52,6 +56,8 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     allowedOrigin: env.ALLOWED_ORIGIN || (production ? undefined : "http://localhost:3000"),
     trustProxy: env.TRUST_PROXY === "true",
     knowledgeFile: env.KNOWLEDGE_FILE || "chat-api/knowledge/filip.md",
+    questionsDir: env.QUESTIONS_DIR || undefined,
+    questionsDays: positive(env.QUESTIONS_DAYS, 30),
     limits: {
       chatPerMinute: positive(env.CHAT_PER_MINUTE, 8),
       chatPerDay: positive(env.CHAT_PER_DAY, 60),

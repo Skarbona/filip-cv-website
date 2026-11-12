@@ -173,6 +173,9 @@ export default function ChatWindow({ chat, contactTransport }: ChatWindowProps) 
           {draft.length}/{MAX_MESSAGE_LENGTH}
         </p>
       )}
+      <p className="px-4 pb-2 text-[11px] text-muted-foreground">
+        Questions are kept for 30 days, without your IP, so Filip can see what people ask.
+      </p>
     </div>
   );
 }

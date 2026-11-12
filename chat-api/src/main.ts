@@ -2,6 +2,7 @@ import { loadConfig } from "./config.ts";
 import { cannedLlm, createOpenRouter } from "./llm.ts";
 import { consoleMailer, createResendMailer } from "./mailer.ts";
 import { loadSystemPrompt } from "./prompt.ts";
+import { createQuestionLog } from "./questions.ts";
 import { createApp } from "./server.ts";
 
 const config = loadConfig();
@@ -29,16 +30,36 @@ const mailer = config.resendKey
   ? createResendMailer({ apiKey: config.resendKey, from: config.contactFrom, to: config.contactTo })
   : consoleMailer;
 
+const questionLog = config.questionsDir
+  ? createQuestionLog({ dir: config.questionsDir, days: config.questionsDays })
+  : undefined;
+if (questionLog) {
+  const purge = () =>
+    questionLog
+      .purge()
+      .catch((error) =>
+        console.error(
+          `Old questions not deleted: ${error instanceof Error ? error.message : error}`
+        )
+      );
+  void purge();
+  setInterval(purge, 6 * 60 * 60 * 1000).unref();
+}
+
 const server = createApp({
   config,
   llm,
   mailer,
   systemPrompt: loadSystemPrompt(config.knowledgeFile),
+  questionLog,
 });
 
 server.listen(config.port, config.host, () => {
+  const questions = config.questionsDir
+    ? `kept ${config.questionsDays} days in ${config.questionsDir}`
+    : "not saved";
   console.log(
-    `chat-api listening on http://${config.host}:${config.port} (models: ${config.models.join(", ")})`
+    `chat-api listening on http://${config.host}:${config.port} (models: ${config.models.join(", ")}; questions: ${questions})`
   );
 });
 

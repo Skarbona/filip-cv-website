@@ -32,6 +32,13 @@ For real answers copy `chat-api/env.example` to `chat-api/.env` and fill in `OPE
 4. Short history (12 turns) and short answers (400 tokens).
 5. Contact emails go only to Filip, after the visitor clicks Send, at most 3 per IP a day.
 
+## Saved questions
+
+With `QUESTIONS_DIR` set, the API saves each visitor's latest question to `questions-YYYY-MM-DD.jsonl`
+in that folder: the time, its number in the conversation, the outcome and the text. It saves no IPs
+and no answers, and pasted code becomes a placeholder. Files older than `QUESTIONS_DAYS` (30) are
+deleted. The chat window tells visitors about it. Without `QUESTIONS_DIR` nothing is saved.
+
 ## Deploy
 
 Build and run instructions are at the top of `Dockerfile`. nginx forwards `/api/` to the container:

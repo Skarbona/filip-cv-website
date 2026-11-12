@@ -71,6 +71,7 @@ Everything in this file is public. The bot may say any of it and nothing beyond 
 
 - Email, phone, LinkedIn, GitHub and Instagram: as listed on the website.
 - The chat can send Filip a message, but only after the visitor confirms it.
+- Questions typed into this chat are kept for 30 days, without IP addresses and without the answers, so Filip can see what visitors ask.
 - He usually replies within 24-48 hours.
 - No calendar link.
 - CV as PDF: not published yet. If asked, offer to pass the request to Filip.

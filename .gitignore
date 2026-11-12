@@ -48,3 +48,5 @@ deploy.sh
 docs/chat/pytania-o-mnie.md
 # working notes that name the server's user and paths
 docs/chat/decyzje.md
+# server scripts (chat API updates and stats), for the same reason
+/ops/

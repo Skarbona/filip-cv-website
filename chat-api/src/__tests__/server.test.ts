@@ -4,6 +4,7 @@ import type { Server } from "node:http";
 import { loadConfig } from "../config.ts";
 import { LlmError, type Llm } from "../llm.ts";
 import type { Mailer } from "../mailer.ts";
+import type { QuestionLog } from "../questions.ts";
 import { createApp } from "../server.ts";
 
 const servers: Server[] = [];
@@ -14,7 +15,11 @@ afterEach(async () => {
   );
 });
 
-async function start(env: Record<string, string> = {}, llmReply?: Llm["reply"]) {
+async function start(
+  env: Record<string, string> = {},
+  llmReply?: Llm["reply"],
+  questionLog?: QuestionLog
+) {
   const llm = {
     reply: jest.fn(
       llmReply ?? (async () => ({ reply: { text: "I lead AI Labs projects." }, model: "test" }))
@@ -27,6 +32,7 @@ async function start(env: Record<string, string> = {}, llmReply?: Llm["reply"]) 
     llm,
     mailer,
     systemPrompt: "SYSTEM PROMPT",
+    questionLog,
     log,
   });
   servers.push(server);
@@ -276,5 +282,86 @@ describe("contact API", () => {
     const { post, mailer } = await start();
     mailer.send.mockRejectedValueOnce(new Error("Resend responded with 500"));
     expect((await post("/api/contact", contact)).status).toBe(502);
+  });
+});
+
+describe("saved questions", () => {
+  const questionLog = () => ({
+    save: jest.fn<Promise<void>, Parameters<QuestionLog["save"]>>(async () => {}),
+    purge: jest.fn(async () => {}),
+  });
+
+  it("keeps the latest question and its outcome, without the answer or the IP", async () => {
+    const questions = questionLog();
+    const { post } = await start({ TRUST_PROXY: "true" }, undefined, questions);
+    await post(
+      "/api/chat",
+      {
+        messages: [
+          { role: "user", content: "Where are you based?" },
+          { role: "assistant", content: "Wrocław." },
+          { role: "user", content: "Are you open to new projects?" },
+        ],
+      },
+      { "X-Real-IP": "203.0.113.7" }
+    );
+
+    expect(questions.save).toHaveBeenCalledTimes(1);
+    const saved = questions.save.mock.calls[0][0];
+    expect(saved).toEqual({
+      time: expect.stringMatching(/^\d{4}-\d{2}-\d{2}T/),
+      turn: 2,
+      outcome: "answered",
+      question: "Are you open to new projects?",
+    });
+    expect(JSON.stringify(saved)).not.toMatch(/203\.0\.113\.7|AI Labs/);
+  });
+
+  it("saves a placeholder instead of pasted code", async () => {
+    const questions = questionLog();
+    const { ask } = await start({}, undefined, questions);
+    await ask("function add(a, b) {\n  return a + b;\n}");
+
+    expect(questions.save).toHaveBeenCalledWith(
+      expect.objectContaining({ outcome: "invoice", question: "(pasted code, not saved)" })
+    );
+  });
+
+  it("saves questions the model failed to answer", async () => {
+    const questions = questionLog();
+    const { ask } = await start(
+      {},
+      async () => {
+        throw new LlmError(500, "Provider exploded");
+      },
+      questions
+    );
+    await ask("Hi?");
+
+    expect(questions.save).toHaveBeenCalledWith(
+      expect.objectContaining({ outcome: "error", question: "Hi?" })
+    );
+  });
+
+  it("saves nothing for rejected or rate-limited requests", async () => {
+    const questions = questionLog();
+    const { ask, post } = await start({ CHAT_PER_MINUTE: "1" }, undefined, questions);
+    await post("/api/chat", { messages: [{ role: "assistant", content: "Hi" }] });
+    await ask("One?");
+    await ask("Two?");
+
+    expect(questions.save).toHaveBeenCalledTimes(1);
+    expect(questions.save).toHaveBeenCalledWith(expect.objectContaining({ question: "One?" }));
+  });
+
+  it("still answers when a question can't be saved", async () => {
+    const questions = questionLog();
+    questions.save.mockRejectedValueOnce(new Error("EACCES: permission denied"));
+    const { ask, log } = await start({}, undefined, questions);
+    const response = await ask("Hi?");
+
+    expect(response.status).toBe(200);
+    await new Promise((resolve) => setImmediate(resolve));
+    expect(log).toHaveBeenCalledWith({ error: "Question not saved: EACCES: permission denied" });
   });
 });

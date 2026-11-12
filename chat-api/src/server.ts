@@ -6,6 +6,7 @@ import type { Config } from "./config.ts";
 import { looksLikeInjection } from "./injection.ts";
 import { LlmError, type Llm } from "./llm.ts";
 import type { Mailer } from "./mailer.ts";
+import type { QuestionLog } from "./questions.ts";
 import { RateLimiter } from "./rateLimit.ts";
 import { parseChat, parseContact } from "./validate.ts";
 
@@ -22,6 +23,8 @@ export interface Deps {
   llm: Llm;
   mailer: Mailer;
   systemPrompt: string;
+  /** Saves visitors' questions when QUESTIONS_DIR is set */
+  questionLog?: QuestionLog;
   now?: () => number;
   log?: (entry: LogEntry) => void;
 }
@@ -95,6 +98,7 @@ export function createApp({
   llm,
   mailer,
   systemPrompt,
+  questionLog,
   now = Date.now,
   log = (entry) => console.log(JSON.stringify(entry)),
 }: Deps): Server {
@@ -125,12 +129,20 @@ export function createApp({
       );
     }
 
+    // Saved however the question ends: answered, refused or failed
+    try {
+      await answer(res, parsed.value, entry);
+    } finally {
+      remember(parsed.value, entry);
+    }
+  }
+
+  async function answer(res: ServerResponse, turns: ChatTurn[], entry: LogEntry) {
     const reply = (outcome: string, body: ChatReply) => {
       entry.outcome = outcome;
       send(res, 200, body);
     };
 
-    const turns = parsed.value;
     const questions = turns.filter((turn) => turn.role === "user");
     if (questions.length > MAX_VISITOR_MESSAGES) {
       return reply("limit", { text: REPLIES.limit, card: contactCard() });
@@ -198,6 +210,23 @@ export function createApp({
     await mailer.send(parsed.value);
     entry.outcome = "sent";
     send(res, 200, { ok: true });
+  }
+
+  /** Keeps the visitor's latest question for Filip: never the answer or the IP, and no pasted code */
+  function remember(turns: ChatTurn[], entry: LogEntry) {
+    if (!questionLog) return;
+    const questions = turns.filter((turn) => turn.role === "user");
+    const question = questions[questions.length - 1].content;
+    questionLog
+      .save({
+        time: new Date(now()).toISOString(),
+        turn: questions.length,
+        outcome: typeof entry.outcome === "string" ? entry.outcome : "error",
+        question: looksLikeCode(question) ? "(pasted code, not saved)" : question,
+      })
+      .catch((error) =>
+        log({ error: `Question not saved: ${error instanceof Error ? error.message : error}` })
+      );
   }
 
   const server = createServer(async (req, res) => {
