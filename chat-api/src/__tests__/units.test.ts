@@ -1,8 +1,12 @@
 /** @jest-environment node */
+import { mkdtemp, readdir, readFile, rm, stat, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { personalInfo } from "../../../lib/data.ts";
 import { looksLikeInjection } from "../injection.ts";
 import { createResendMailer } from "../mailer.ts";
 import { buildSystemPrompt, loadSystemPrompt } from "../prompt.ts";
+import { createQuestionLog } from "../questions.ts";
 import { RateLimiter } from "../rateLimit.ts";
 import { parseChat, parseContact } from "../validate.ts";
 
@@ -173,5 +177,55 @@ describe("createResendMailer", () => {
     await expect(
       mailer.send({ name: "Anna", email: "anna@example.com", message: "Hi", website: "" })
     ).rejects.toThrow("Resend responded with 403: The example.com domain is not verified.");
+  });
+});
+
+describe("createQuestionLog", () => {
+  let dir: string;
+
+  beforeEach(async () => {
+    dir = await mkdtemp(join(tmpdir(), "questions-"));
+  });
+
+  afterEach(async () => {
+    await rm(dir, { recursive: true, force: true });
+  });
+
+  it("appends each question to the day's file, readable only by the API's user", async () => {
+    const questions = join(dir, "questions");
+    const log = createQuestionLog({ dir: questions, days: 30 });
+    const first = {
+      time: "2026-11-12T10:00:00.000Z",
+      turn: 1,
+      outcome: "answered",
+      question: "Hi?",
+    };
+    const second = { ...first, time: "2026-11-12T10:01:00.000Z", turn: 2, question: "Where?" };
+    await log.save(first);
+    await log.save(second);
+
+    const file = join(questions, "questions-2026-11-12.jsonl");
+    const lines = (await readFile(file, "utf8")).trim().split("\n");
+    expect(lines.map((line) => JSON.parse(line))).toEqual([first, second]);
+    expect((await stat(file)).mode & 0o777).toBe(0o600);
+    expect((await stat(questions)).mode & 0o777).toBe(0o700);
+  });
+
+  it("deletes the day files older than the retention period and nothing else", async () => {
+    const names = [
+      "notes.txt",
+      "questions-2026-10-12.jsonl",
+      "questions-2026-10-13.jsonl",
+      "questions-2026-11-12.jsonl",
+    ];
+    for (const name of names) await writeFile(join(dir, name), "{}\n");
+    const log = createQuestionLog({ dir, days: 30, now: () => Date.parse("2026-11-12T08:00:00Z") });
+    await log.purge();
+
+    expect((await readdir(dir)).sort()).toEqual([
+      "notes.txt",
+      "questions-2026-10-13.jsonl",
+      "questions-2026-11-12.jsonl",
+    ]);
   });
 });
